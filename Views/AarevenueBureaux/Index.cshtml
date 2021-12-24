@@ -1,0 +1,101 @@
+﻿@model IEnumerable<aarb.Models.AarevenueBureau>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AarevenueBureauNameAmharic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AarevenueBureauNameEnglish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LetterNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsertedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeletedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsertedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeletedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BudgetYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedBudget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BudgetYearNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AarevenueBureauNameAmharic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AarevenueBureauNameEnglish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsertedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeletedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsertedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeletedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BudgetYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedBudget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BudgetYearNavigation.AafinanceBureaunNameAmharic)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BudgetYearId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BudgetYearId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BudgetYearId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

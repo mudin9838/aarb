@@ -1,0 +1,47 @@
+﻿@model IEnumerable<aarb.Models.BranchLevel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchLevelNameAmh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchLevelNamEng)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BudgetYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchLevelNameAmh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchLevelNamEng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BudgetYear.AarevenueBureauNameAmharic)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BranchLevelId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BranchLevelId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BranchLevelId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
